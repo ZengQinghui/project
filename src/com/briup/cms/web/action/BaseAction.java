@@ -17,7 +17,6 @@ public class BaseAction extends ActionSupport {
 	@Action(value="toIndex",results={
 			@Result(name="success",location="/WEB-INF/jsp/index.jsp")})
 	public String toIndex(){
-		System.out.println("hello---toIndex");
 		return "success";
 	}
 	
