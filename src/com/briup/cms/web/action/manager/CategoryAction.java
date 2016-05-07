@@ -5,16 +5,21 @@ import org.apache.struts2.convention.annotation.Result;
 
 import com.briup.cms.bean.Category;
 import com.briup.cms.service.ICategoryService;
-import com.briup.cms.service.impl.CategoryServiceimpl;
+import com.briup.cms.service.impl.CategoryServiceImpl;
 import com.opensymphony.xwork2.ActionSupport;
-
+/**
+ * 后台栏目管理Action
+ *
+ */
 public class CategoryAction extends ActionSupport {
 
 	private static final long serialVersionUID = 1L;
+	//同名参数传值
 	private String name;
 	private Integer code;
 	
-	private ICategoryService categoryService=new CategoryServiceimpl();
+	//创建Service层的对象，方便action各个方法去调用
+	private ICategoryService categoryService=new CategoryServiceImpl();
 	
 	/**
 	 * 
@@ -37,7 +42,9 @@ public class CategoryAction extends ActionSupport {
 	
 	@Action(value="addCategory")
 	public void addCategory(){
+		//将接收到的参数进行封装，封装为一个对象
 		Category category =new Category(name,code);
+		//调用service层的服务，完成添加栏目的功能
 		categoryService.add(category);
 	}
 	

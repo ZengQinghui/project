@@ -1,3 +1,4 @@
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 	<div class="top">
@@ -14,7 +15,9 @@
             <div class="nav">
             	<ul class="navUI">
                 	<li><a href="toIndex.action">首页</a></li>
-                    <li><a href="toList.action">教师风采</a></li>
+                	<c:forEach items="${categoryList }" var="c">
+                		<li><a href="toList.action">${c.name}</a></li>
+                	</c:forEach>                    
                 </ul>
             </div>
             <div class="banner">

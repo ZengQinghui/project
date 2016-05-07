@@ -1,5 +1,5 @@
 @Namespace("/")
-@ParentPackage("struts-default")
+@ParentPackage("struts-default") //继承struts-default
 package com.briup.cms.web.action;
 import org.apache.struts2.convention.annotation.Namespace;
 import org.apache.struts2.convention.annotation.ParentPackage;

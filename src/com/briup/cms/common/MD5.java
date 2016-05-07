@@ -10,7 +10,7 @@ package com.briup.cms.common;
 //package md5java ;
 import java.io.* ;
 
-public class Md5 {
+public class MD5 {
     private static final int BUFFER_SIZE = 1024 ;
 
     private static final int S11 = 7 ;
@@ -311,7 +311,7 @@ public class Md5 {
      * @param encoding the encoding name used (such as UTF8)
      */
 
-    public Md5 (String input, String enc) {
+    public MD5 (String input, String enc) {
          byte bytes [] = null;
         try {
             bytes = input.getBytes (enc);
@@ -334,7 +334,7 @@ public class Md5 {
      * @param input The string to be digestified.
      */
 
-    public Md5 (String input) {
+    public MD5 (String input) {
         this(input, "UTF8");
     }
 
@@ -343,7 +343,7 @@ public class Md5 {
      * @param in The input stream to be digestified.
      */
 
-    public Md5 (InputStream in) {
+    public MD5 (InputStream in) {
         this.stringp = false ;
         this.in      = in ;
         this.state   = new int[4] ;
@@ -370,7 +370,7 @@ public class Md5 {
                 key1 = key.getBytes() ;
 
                 if ( key_len > 64 ) {
-                        key1 = new Md5( key ).getDigest() ;
+                        key1 = new MD5( key ).getDigest() ;
                         key_len = 16 ;
                 }
 
@@ -389,12 +389,12 @@ public class Md5 {
                         k_opad[i] ^= 0x5c ;
                 }
 
-                Md5 md5 = new Md5( "" ) ;
+                MD5 md5 = new MD5( "" ) ;
                 md5.update( k_ipad , 64 ) ;
                 md5.update( text.getBytes() , text_len ) ;
                 digest = md5.getDigest() ;
 
-                Md5 md51 = new Md5( "" ) ;
+                MD5 md51 = new MD5( "" ) ;
                 md51.update( k_opad , 64 ) ;
                 md51.update( digest , 16 ) ;
                 digest = md51.getDigest() ;
