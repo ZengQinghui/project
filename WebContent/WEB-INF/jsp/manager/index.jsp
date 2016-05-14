@@ -45,14 +45,14 @@
 						<li url="toCategoryManager.action"><a href="#"><em
 								class="base_userset"></em><span>栏目管理</span></a></li>
 
-						<li url=""><a href="#"><em 
-								class="base_roll"></em><span>信息发布</span></a></li>
-						<li url=""><a href="#"><em 
-								class="base_sys"></em><span>信息管理</span></a></li>
+						<li url="toAddArticle.action"><a href="#"><em class="base_roll"></em><span>信息发布</span></a></li>
+						<li url="toArticleManager.action"><a href="#"><em class="base_sys"></em><span>信息管理</span></a></li>
+						<li url="toAddScenic.action"><a href="#"><em class="base_basicset"></em><span>添加景点信息</span></a></li>
+						<li url="toScenicManager.action"><a href="#"><em class="base_userset"></em><span>景点信息管理</span></a></li>
 					</ul>
 				</div>
 				<!-- 内容页面 -->
-				<div class="right" style="padding:30px"></div>
+				<div class="right" style="padding: 30px"></div>
 				<div class="clear"></div>
 			</div>
 		</div>

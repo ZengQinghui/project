@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import com.briup.cms.bean.Category;
@@ -13,6 +14,69 @@ import com.briup.cms.common.ConnectionFactory;
  * 栏目管理的数据库操作类
  */
 public class CategoryDao {
+	/*
+	 * 修改
+	 */
+	public void update(Category category,long id){
+		try{
+			Connection conn=null;
+			PreparedStatement pstmt=null;
+			try{
+				//1.注册驱动，获取连接
+				conn=ConnectionFactory.getConn();
+				String sql="UPDATE t_category SET name = ?, code = ? WHERE id = ?";
+				//2.预处理sql
+				pstmt=conn.prepareStatement(sql);
+				pstmt.setString(1, category.getName());
+				pstmt.setInt(2, category.getCode());
+				pstmt.setLong(3, id);
+				//3.执行sql
+				pstmt.executeUpdate();
+			}finally{
+				//4.释放资源
+				if(pstmt!=null){
+					pstmt .close();
+				}
+				if(conn!=null){
+					conn.close();
+				}
+			}
+			
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+	}
+	/*
+	 * 删除
+	 */
+	public void deleteById(long id){
+		try{
+			Connection conn=null;
+			PreparedStatement pstmt=null;
+			try{
+				//1.注册驱动，获取连接
+				conn=ConnectionFactory.getConn();
+				String sql="delete from t_category where id=?";
+				//2.预处理sql
+				pstmt=conn.prepareStatement(sql);
+				pstmt.setLong(1, id);
+				//3.执行sql
+				pstmt.executeUpdate();
+			}finally{
+				//4.释放资源
+				if(pstmt!=null){
+					pstmt .close();
+				}
+				if(conn!=null){
+					conn.close();
+				}
+			}
+			
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+	}
+	
 	/*
 	 * 保存方法
 	 */
@@ -44,8 +108,12 @@ public class CategoryDao {
 			e.printStackTrace();
 		}
 	}
+	
+	/*
+	 * 查询所有
+	 */
 	public List<Category> findAll(){
-		List<Category> list=null;
+		List<Category> list=new ArrayList<Category>();
 		try{
 			Connection conn=null;
 			PreparedStatement pstmt=null;
@@ -59,7 +127,7 @@ public class CategoryDao {
 				//3.执行
 				rs=pstmt.executeQuery();
 				while(rs.next()){
-					Long id=rs.getLong("id");
+					long id=rs.getLong("id");
 					String name=rs.getString("name");
 					int code=rs.getInt("code");
 					Category c=new Category(name,code);
@@ -77,8 +145,7 @@ public class CategoryDao {
 				if(conn!=null){
 					conn.close();
 				}
-			}
-			
+			}			
 		}catch(Exception e){
 			e.printStackTrace();
 		}

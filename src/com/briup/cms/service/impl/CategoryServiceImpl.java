@@ -23,7 +23,12 @@ public class CategoryServiceImpl implements ICategoryService {
 	
 	@Override
 	public void delete(long id) {
-				
+		categoryDao.deleteById(id);
+	}
+
+	@Override
+	public void update(Category category,long id) {
+		categoryDao.update(category, id);
 	}
 
 }
