@@ -15,12 +15,17 @@ public class ScenicServiceImpl implements IScenicService {
 
 	@Override
 	public void delete(long id) {
-				
+		scenicDao.deleteById(id);	
 	}
 
 	@Override
-	public List<Scenic> scenic() {
-		return null;
+	public List<Scenic> list() {
+		return scenicDao.findAll();
+	}
+
+	@Override
+	public void update(Scenic scenic) {
+		scenicDao.update(scenic);
 	}
 
 }

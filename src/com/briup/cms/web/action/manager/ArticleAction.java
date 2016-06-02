@@ -49,6 +49,7 @@ public class ArticleAction extends ActionSupport {
 			results={@Result(name="success",
 			location="/WEB-INF/jsp/manager/articleManager.jsp")})
 	public String toArticleManager(){
+		//cateogryList = categoryService.list();
 		articleList = articleService.list();
 		return SUCCESS;
 	}
@@ -68,6 +69,17 @@ public class ArticleAction extends ActionSupport {
 	@Action("delArticle")
 	public void delArticle(){
 		articleService.remove(id);
+	}
+	
+	@Action("updArticle")
+	public void updArticle(){
+		Article article=new Article();
+		article.setTitle(title);
+		article.setAuthor(author);
+		article.setContent(content);
+		article.setPublisurDate(new Date());
+		article.setId(id);
+		articleService.update(article);
 	}
 	
 	public List<Category> getCateogryList() {

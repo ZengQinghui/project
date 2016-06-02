@@ -4,20 +4,25 @@ public class Scenic {
 	private Long id;
 	private String name;
 	private String site;
-	private String describe;
+	private String description;
+	private String openingTime;
 	private Double price;
 	
 	public Scenic(){
 		
 	}
-
-	public Scenic(String name, String site, String describe, Double price) {
+	
+	public Scenic(String name, String site, String description,
+			String openingTime, Double price) {
 		super();
 		this.name = name;
 		this.site = site;
-		this.describe = describe;
-		this.price =  price;
+		this.description = description;
+		this.openingTime = openingTime;
+		this.price = price;
 	}
+
+
 
 	public Long getId() {
 		return id;
@@ -43,12 +48,12 @@ public class Scenic {
 		this.site = site;
 	}
 
-	public String getDescribe() {
-		return describe;
+	public String getDescription() {
+		return description;
 	}
 
-	public void setDescribe(String describe) {
-		this.describe = describe;
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
 	public Double getPrice() {
@@ -57,6 +62,14 @@ public class Scenic {
 
 	public void setPrice(Double price) {
 		this.price = price;
+	}
+
+	public String getOpeningTime() {
+		return openingTime;
+	}
+
+	public void setOpeningTime(String openingTime) {
+		this.openingTime = openingTime;
 	}
 	
 	

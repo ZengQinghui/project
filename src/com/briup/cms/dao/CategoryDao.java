@@ -17,7 +17,7 @@ public class CategoryDao {
 	/*
 	 * 修改
 	 */
-	public void update(Category category,long id){
+	public void update(Category category){
 		try{
 			Connection conn=null;
 			PreparedStatement pstmt=null;
@@ -29,7 +29,7 @@ public class CategoryDao {
 				pstmt=conn.prepareStatement(sql);
 				pstmt.setString(1, category.getName());
 				pstmt.setInt(2, category.getCode());
-				pstmt.setLong(3, id);
+				pstmt.setLong(3, category.getId());
 				//3.执行sql
 				pstmt.executeUpdate();
 			}finally{

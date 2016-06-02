@@ -69,7 +69,8 @@ public class CategoryAction extends ActionSupport {
 	@Action(value = "updCategory")
 	public void updCategory() {
 		Category category=new Category(name,code);
-		categoryService.update(category, id);
+		category.setId(id);
+		categoryService.update(category);
 	}
 	
 	public String getName() {

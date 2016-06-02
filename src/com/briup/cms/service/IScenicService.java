@@ -10,5 +10,7 @@ public interface IScenicService {
 	//删除景点信息
 	void delete(long id);
 	//显示景点信息
-	List<Scenic> scenic();
+	List<Scenic> list();
+	//修改景点信息
+	void update(Scenic scenic);
 }

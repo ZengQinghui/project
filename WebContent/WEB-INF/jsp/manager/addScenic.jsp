@@ -20,10 +20,11 @@ $(function(){
 <hr>
 <form action="addScenic.action" method="post" id="addScenicForm">
 	景点名称:<input type="text" name="name"/><br/>
-	景点地点:<input type="text" name="site"/><br/>
-	景点描述:
-			<textarea name="describe" rows="10" cols="30"></textarea>
+	景点位置:<input type="text" name="site"/><br/>
+	景点描述:<br>
+			<textarea name="description" rows="10" cols="30"></textarea>
 		<br/>
+	开放时间:<input type="text" name="openingTime"/><br/>
 	景点价格:<input type="text" name="price"/><br/>
 	<input type="submit" value="提交"/><br/>
 </form>

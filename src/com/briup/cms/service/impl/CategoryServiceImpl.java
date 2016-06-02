@@ -27,8 +27,8 @@ public class CategoryServiceImpl implements ICategoryService {
 	}
 
 	@Override
-	public void update(Category category,long id) {
-		categoryDao.update(category, id);
+	public void update(Category category) {
+		categoryDao.update(category);
 	}
 
 }

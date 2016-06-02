@@ -47,8 +47,8 @@
 
 						<li url="toAddArticle.action"><a href="#"><em class="base_roll"></em><span>信息发布</span></a></li>
 						<li url="toArticleManager.action"><a href="#"><em class="base_sys"></em><span>信息管理</span></a></li>
-						<li url="toAddScenic.action"><a href="#"><em class="base_basicset"></em><span>添加景点信息</span></a></li>
-						<li url="toScenicManager.action"><a href="#"><em class="base_userset"></em><span>景点信息管理</span></a></li>
+						<li url="toAddScenic.action"><a href="#"><em class="base_basicset"></em><span>添加景点</span></a></li>
+						<li url="toScenicManager.action"><a href="#"><em class="base_userset"></em><span>景点管理</span></a></li>
 					</ul>
 				</div>
 				<!-- 内容页面 -->

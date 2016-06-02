@@ -15,4 +15,6 @@ public interface IArticleService {
 	Article scanner(long id);
 	//通过栏目查询
 	List<Article> listByCategory(long c_id);
+	//修改
+	void update(Article article);
 }

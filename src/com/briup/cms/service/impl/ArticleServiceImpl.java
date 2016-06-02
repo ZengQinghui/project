@@ -35,4 +35,10 @@ public class ArticleServiceImpl implements IArticleService {
 		return null;
 	}
 
+	@Override
+	public void update(Article article) {
+		articleDao.update(article);
+		
+	}
+
 }
